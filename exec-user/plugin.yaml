@@ -5,7 +5,7 @@ longDesc: >
 example: ""
 command: "./exec-user.sh"
 flags:
-  - name: "user"
+  - name: "targetuser"
     shorthand: "u"
     desc: "Username or UID. If omitted, will use root"
     defValue: "root"

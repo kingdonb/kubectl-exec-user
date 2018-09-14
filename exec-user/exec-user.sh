@@ -7,7 +7,7 @@ NEW_POD_NAME=${NEW_POD_NAME:0:63}  # max len allowed
 
 KUBECTL=${KUBECTL_PLUGINS_CALLER}
 NAMESPACE=${KUBECTL_PLUGINS_CURRENT_NAMESPACE}
-USER=${KUBECTL_PLUGINS_LOCAL_FLAG_USER}
+TARGETUSER=${KUBECTL_PLUGINS_LOCAL_FLAG_TARGETUSER}
 export CONTAINER=${KUBECTL_PLUGINS_LOCAL_FLAG_CONTAINER}
 
 NODENAME=$( $KUBECTL --namespace ${NAMESPACE} get pod ${POD} -o go-template='{{.spec.nodeName}}' )
@@ -35,7 +35,7 @@ read -r -d '' OVERRIDES <<EOF
                   "exec",
                   "-it",
                   "-u",
-                  "${USER}",
+                  "${TARGETUSER}",
                   "${CONTAINERID}",
                   "${COMMAND}"
                 ],
