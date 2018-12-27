@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.kube/plugins
+mkdir -p $HOME/bin
 
-cp -r exec-user ~/.kube/plugins/
-chmod +x ~/.kube/plugins/exec-user
+cp kubectl-userland $HOME/bin/
+chmod +x $HOME/bin/kubectl-userland
